@@ -1,0 +1,457 @@
+/*var*/
+:root {
+   --color1: black;
+   --color2: red;
+   --padding: 40px;
+}
+
+/*end var*/
+/*genral*/
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+   list-style: none;
+}
+
+.container {
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+@media (min-width: 768px) {
+   .container {
+      width: 750px;
+   }
+}
+
+@media (min-width: 992px) {
+   .container {
+      width: 970px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .container {
+      width: 1170px;
+   }
+}
+
+/*end genral*/
+/*header*/
+header {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   border-bottom: 1px solid black;
+   z-index: 2;
+}
+
+header .container {
+   display: flex;
+   align-items: center;
+   min-height: 50px;
+   position: relative;
+   justify-content: space-between;
+}
+
+header h2 {
+   font-family: Georgia, "Times New Roman", Times, serif;
+   font-size: 25px;
+   position: absolute;
+   right: 100px;
+   top: 20px;
+   color: var(--color2);
+}
+
+header .logo {
+   margin-left: 10px;
+   margin-right: 0;
+}
+
+header .logo img {
+   max-width: 70px;
+   border-radius: 5px;
+}
+
+header nav {
+   flex: 1;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+header .toggle {
+   color: white;
+   font-size: 25px;
+   display: none;
+}
+
+header ul {
+   display: flex;
+   list-style: none;
+}
+
+header ul li a {
+   padding: 15px !important;
+}
+
+header ul li a {
+   padding: 40px 10px;
+   display: block;
+   color: white;
+   text-decoration: none;
+   font-size: 16px;
+   transition: 0.5s;
+   position: relative;
+   z-index: 1;
+}
+
+header ul li a.active,
+header ul li a:hover {
+   color: var(--color2);
+   border-bottom: 1px solid var(--color2);
+}
+
+/*end header*/
+/* landing*/
+.landing {
+   min-height: 400px;
+   background-image: url(../image/landing.jpg);
+   background-size: cover;
+   position: relative;
+}
+@media (min-width: 768px) {
+   .landing {
+      min-height: 900px;
+   }
+}
+@media (min-width: 992px) {
+   .landing {
+      min-height: 1100px;
+   }
+}
+@media (min-width: 1200px) {
+   .landing {
+      min-height: 1600px;
+   }
+}
+.landing::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+}
+.landing .text {
+   position: absolute;
+   right: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 50%;
+   padding: 50px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   color: white;
+}
+@media (max-width: 767px) {
+   .landing .text {
+      width: 100%;
+   }
+}
+@media (min-width: 992px) {
+   .landing .text {
+      border: 1.5px solid var(--color2);
+      border-radius: 5px;
+      right: 100px;
+   }
+}
+
+.landing .text h2 {
+   padding-right: 20px;
+   font-size: 30px;
+   font-weight: 1000;
+   line-height: 1.5;
+   margin-bottom: 20px;
+   color: var(--color2);
+}
+.landing .text p {
+   width: fit-content;
+   color: var(--color2);
+   font-size: 18px;
+   line-height: 2;
+   font-weight: 600;
+}
+/*end landing*/
+/* prodects*/
+main {
+   padding: 30px;
+}
+main .container .prodects {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   gap: 5px;
+}
+main .main-header {
+   text-align: center;
+}
+main .main-header h3 {
+   font-weight: normal;
+   font-size: 40px;
+   position: relative;
+   margin-bottom: 70px;
+}
+main .main-header p {
+   width: 550px;
+   max-width: 100%;
+   margin: 0 auto 100px;
+   line-height: 2;
+   color: #777;
+}
+main .container .prodects section {
+   display: flex;
+   flex-direction: column;
+   /* border: 1px solid var(--color2);*/
+   border-radius: 3px;
+   padding: 10px;
+   background-color: #fff1f1f1;
+   align-items: center;
+   height: 420px;
+}
+main .container .prodects section img {
+   height: 250px;
+   margin-bottom: 10px;
+}
+main .container .prodects section .image {
+   position: relative;
+   width: 150px;
+   display: flex;
+   justify-content: center;
+}
+main .container .prodects section .image:before {
+   content: "التوصيل مجاناً";
+   position: absolute;
+   background-color: var(--color2);
+   color: white;
+   font-size: 15px;
+   right: 0px;
+   z-index: 2;
+   width: 100px;
+   padding: 10px 30x;
+   right: 50px;
+   text-align: center;
+   border-top-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+main .container .prodects section .head h4 {
+   font-weight: normal;
+   color: var(--color2);
+   font-size: 23px;
+}
+main .container .prodects section .head p {
+   position: relative;
+   top: 10px;
+   right: 10px;
+   font-size: 25px;
+   font-weight: bold;
+}
+main .container .prodects section .head p:after {
+   content: "﷼";
+   position: absolute;
+   font-size: 12px;
+   right: 50px;
+}
+main .container .prodects section .foot {
+   position: relative;
+   border-radius: 3px;
+   bottom: -30px;
+   padding: 10px 30px;
+   background-color: var(--color2);
+}
+main .container .prodects section .foot a {
+   text-decoration: none;
+   color: white;
+}
+
+/*end prodects*/
+/* openain*/
+.openain {
+   min-height: 400px;
+   background-image: url(../image/side.png);
+   background-size: cover;
+   background-color: #fffefe;
+   position: relative;
+}
+
+.openain::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+.openain aside {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   padding-top: 50px;
+}
+@media (max-width: 991px) {
+   .openain aside {
+      flex-direction: column;
+   }
+   .openain aside h4 {
+      font-size: 30px;
+      padding-bottom: 20px;
+   }
+   .openain aside p {
+      margin-bottom: 30px;
+      font-size: 20px;
+   }
+}
+.openain aside h4 {
+   color: white;
+   font-weight: normal;
+}
+@media (min-width: 992px) {
+   .openain aside h4 {
+      font-size: 35px;
+   }
+   .openain aside p {
+      font-size: 35px;
+   }
+   .openain aside h4,
+   .openain aside p,
+   .openain aside button {
+      margin-top: 80px;
+   }
+}
+.openain aside p {
+   color: white;
+   padding: 15px;
+}
+.openain aside button {
+   font-size: 35px;
+   width: 230px;
+   background-color: var(--color2);
+   color: white;
+   padding: 10px 20px;
+   border: 1px solid white;
+   border-radius: 5px;
+   animation: pulse 1s ease infinite;
+}
+.openain aside button a {
+   text-decoration: none;
+   color: white;
+}
+@media (max-width: 991px) {
+   .openain aside button {
+      font-size: 20px;
+      width: 170px;
+   }
+}
+@keyframes pulse {
+   0% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.1);
+   }
+   100% {
+      transform: scale(1);
+   }
+}
+.openain aside button:focus {
+   outline: none;
+}
+/*end openain*/
+/* footer */
+footer {
+   background-color: #333;
+}
+footer .text {
+   padding-top: 20px;
+   padding-right: 20px;
+   display: flex;
+   justify-content: center;
+}
+@media (max-width: 768px) {
+   footer .text {
+      flex-direction: column;
+   }
+}
+footer .text i {
+   color: var(--color2);
+   font-size: 14px;
+}
+footer .text a {
+   text-decoration: none;
+   color: white;
+   font-size: 16px;
+   padding-right: 10px;
+}
+footer .text .about {
+   padding: 30px;
+   padding-left: 50px;
+   position: relative;
+}
+footer .text .about::after {
+   content: "|";
+   position: absolute;
+   height: 100%;
+   color: #999;
+   font-size: 32px;
+   font-weight: 200;
+   right: 160px;
+   top: 20px;
+}
+@media (max-width: 768px) {
+   footer .text .about {
+      padding-bottom: 5px;
+   }
+   footer .text .about:nth-of-type(2) {
+      padding-top: 5px;
+   }
+   footer .text .about::after {
+      display: none;
+   }
+}
+footer .text .contact {
+   padding: 30px;
+}
+@media (max-width: 768px) {
+   footer .text .contact {
+      padding-top: 5px;
+   }
+}
+footer .rigth p {
+   color: #888;
+   text-align: center;
+   font-size: 14px;
+   margin: 20px auto 0px;
+   padding-bottom: 20px;
+}
+/*end footer*/
